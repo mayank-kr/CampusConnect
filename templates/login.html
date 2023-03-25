@@ -1,0 +1,14 @@
+{% load socialaccount %}
+<html>
+  <body>
+    <h1>Campus Connect</h1>
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }}, You have logged in successfully!</p>
+    <button type="button">
+      <a href="{% url 'dashboard' %}">Dashboard</a>
+    </button>
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
+    {% endif %}
+  </body>
+</html>
