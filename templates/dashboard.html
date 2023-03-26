@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load socialaccount %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +22,7 @@
     <title>Campus Connect</title>
   </head>
   <body>
+    {% if user.is_authenticated %}
     <div class="wrapper hover_collapse">
       <!-- Top bar -->
       <div class="top_navbar">
@@ -106,6 +108,10 @@
         </div>
       </div>
     </div>
+    {% else %}
+    <h1>Welcome to CampusConnect App</h1>
+    <a href="{% provider_login_url 'google' %}">Login using Institute ID!</a>
+    {% endif %}
   </body>
   <script src="{% static 'script.js' %}"></script>
 </html>
