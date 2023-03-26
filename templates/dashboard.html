@@ -37,7 +37,14 @@
           </div>
         </div>
         <h1>Campus Connect</h1>
-        <i class="fa-solid fa-user"></i>
+        <!-- <i class="fa-solid fa-user"></i> -->
+        <div class="dropdown">
+          <button><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-content">
+          <a href="">Profile</a>
+          <a href="">Log Out</a>
+          </div>
+        </div>
       </div>
       <!-- Sidebar -->
       <div class="sidebar">
@@ -109,8 +116,13 @@
       </div>
     </div>
     {% else %}
-    <h1>Welcome to CampusConnect App</h1>
-    <a href="{% provider_login_url 'google' %}">Login using Institute ID!</a>
+    <div class="container">
+      <h1>Welcome to CampusConnect App</h1>
+      <div class="all_buttons">
+      <a class="button" href="{% provider_login_url 'google' %}">Login using Institute ID!</a>
+      <a class="button" href="/admin">Login as Admin!</a>
+    </div>
+    </div>
     {% endif %}
   </body>
   <script src="{% static 'script.js' %}"></script>
