@@ -1,0 +1,26 @@
+body{
+    color: white;
+}
+
+.container2{
+    margin-top: 6rem;
+    margin-left: 70px;
+    padding: 2rem;
+}
+
+.main_heading{
+    padding: .5rem ;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.paragraph{
+    padding: 0 3rem;
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+.sub_heading{
+    padding: .5rem;
+    margin: .5rem 2.5rem;
+}
