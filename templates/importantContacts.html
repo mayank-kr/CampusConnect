@@ -1,19 +1,14 @@
-{%extends "dashboard.html" %}
-{% load static %}
-{%block start%}
-{% block css %}
-<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}">
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 
 <div class="container2">
-<h1 class="main_heading">
-    Important Contacts
-</h1>
+  <h1 class="main_heading">Important Contacts</h1>
 
-<div class="all_buttons">
+  <div class="all_buttons">
     <a class="button" href="importantContacts/emergency">Emergency</a>
-    <a class="button" href="importantContacts/academic">Academic</a>
-    <a class="button" href="importantContacts/professors">Professors</a>
+    <a class="button" href="importantContacts/administration">Administration</a>
+    <a class="button" href="importantContacts/faculty">Faculty</a>
   </div>
 </div>
 {%endblock%}
