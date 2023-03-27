@@ -43,8 +43,8 @@
         <div class="dropdown">
           <button><i class="fa-solid fa-user"></i></button>
           <div class="dropdown-content">
-            <a href="">Profile</a>
-            <a href="">Log Out</a>
+            {% comment %} <a href="">Profile</a> {% endcomment %}
+            <a href="/logout">Log Out</a>
           </div>
         </div>
       </div>
@@ -123,7 +123,9 @@
     <div class="container">
       <h1>Welcome to CampusConnect App</h1>
       <div class="all_buttons">
-        <a class="button" href="{% provider_login_url 'google' %}">Login using Institute ID!</a>
+        <a class="button" href="{% provider_login_url 'google' %}"
+          >Login using Institute ID!</a
+        >
         <a class="button" href="/admin">Login as Admin!</a>
       </div>
     </div>
