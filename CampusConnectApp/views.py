@@ -72,11 +72,13 @@ def buy(request):
 
 
 def sell(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
     if request.method == 'POST':
-        form = SellForm(request.POST)
+        form = SellForm(request.POST, initial={'roll': current_user})
         if form.is_valid():
             form.save()
             return redirect('/buy')
     else:
-        form = SellForm()
+        form = SellForm(initial={'roll': current_user})
     return render(request, 'sell.html', {'form': form})
