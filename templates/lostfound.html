@@ -1,0 +1,13 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+
+<div class="container2">
+  <h1 class="main_heading">Lost and Found Portal</h1>
+
+  <div class="all_buttons">
+    <a class="button" href="/lost">Lost Portal</a>
+    <a class="button" href="/found">Found Portal</a>
+  </div>
+</div>
+{%endblock%}

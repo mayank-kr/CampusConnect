@@ -26,4 +26,6 @@ urlpatterns = [
     path('logout', LogoutView.as_view()),
     path('importantContacts', TemplateView.as_view(
         template_name="importantContacts.html")),
+    path('lostfound', TemplateView.as_view(
+        template_name="lostfound.html")),
 ]
