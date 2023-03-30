@@ -1,5 +1,5 @@
 from django.urls import path
-
+# from .views import GoogleLoginView
 from . import views
 
 urlpatterns = [
@@ -8,4 +8,7 @@ urlpatterns = [
          views.administration, name='administration'),
     path('importantContacts/faculty/', views.faculty, name='faculty'),
     path('profile/', views.profile, name='profile'),
+    path('buy', views.buy, name='buy'),
+    path('sell', views.sell, name='sell'),
+    # path('accounts/google/login/', GoogleLoginView.as_view(), name='google_login'),
 ]

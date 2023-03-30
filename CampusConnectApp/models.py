@@ -16,3 +16,17 @@ class Users(models.Model):
     batch = models.IntegerField()
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
+
+
+class Sell(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    roll = models.ForeignKey(Users, on_delete=models.CASCADE)
+    price = models.FloatField()
+    sold = models.BooleanField(default=False)
+
+
+class Buy(models.Model):
+    id = models.OneToOneField(Sell, on_delete=models.CASCADE, primary_key=True)
+    roll = models.ForeignKey(Users, on_delete=models.CASCADE)

@@ -1,0 +1,28 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+<div class="container2">
+  <h2>Buy</h2>
+  <br />
+  <br />
+  <br />
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Seller (Roll No)</th>
+    </tr>
+    {% for x in data %} {% if not x.sold %}
+    <tr>
+      <td>{{ x.name }}</td>
+      <td>{{ x.description }}</td>
+      <td>{{ x.price }}</td>
+      <td>{{ x.roll.name }} ({{ x.roll.roll }})</td>
+    </tr>
+    {%endif%} {% endfor %}
+  </table>
+  <br />
+  <h3><a href="/sell">Sell your item here!</a></h3>
+</div>
+{%endblock%}

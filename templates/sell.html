@@ -1,0 +1,11 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+<div class="container2">
+  <h3>Sell your item</h3>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{%endblock%}
