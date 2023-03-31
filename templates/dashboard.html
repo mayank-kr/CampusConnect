@@ -23,100 +23,87 @@
   </head>
   <body>
     {% if user.is_authenticated %}
-    <div class="wrapper hover_collapse">
-      <!-- Top bar -->
-      <div class="top_navbar">
-        <div class="logo_menu">
-          <!-- logo -->
+    <div>
+      <div class="container">
+        <div class="left">
           <div class="logo">
-            <img src="{% static 'dashboard/logo.jpeg' %}" alt="" />
+            <img class="logo_img" src="{% static 'dashboard/logo.jpeg' %}" alt="photo not loading">
+            <p>Campus Connect</p>
           </div>
-          <!-- menu button -->
-          <div class="menu">
-            <div class="hamburger">
-              <i class="fas fa-bars"></i>
-            </div>
+          <div class="sidebar_content">
+            <ul>
+              <li>
+                <a href="/">
+                  <span class="icon"><i class="fa fa-qrcode"></i></span>
+                  <span class="text">Dashboard</span>
+                </a>
+              </li>
+      
+              <li>
+                <a href="/buy">
+                  <span class="icon"><i class="fa fa-link"></i></span>
+                  <span class="text">Buy & Sell</span>
+                </a>
+              </li>
+              <li>
+                <a href="/lostfound">
+                  <span class="icon"><i class="fa fa-eye"></i></span>
+                  <span class="text">Lost & Found</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-book"></i></span>
+                  <span class="text">Academic Calender</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-question-circle"></i></span>
+                  <span class="text">Mess Menu</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-pen"></i></span>
+                  <span class="text">Time Table</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">Cab Sharing</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">News & Updates</span>
+                </a>
+              </li>
+              <li>
+                <a href="/importantContacts">
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">Important Contacts</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">Team</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <h1>Campus Connect</h1>
-        <!-- <i class="fa-solid fa-user"></i> -->
-        <div class="dropdown">
-          <a href="/logout"><h1>Log Out</h1></a>
+        <div class="right">
+          {%block start%} {%endblock%}
         </div>
       </div>
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="sidebar_inner">
-          <ul>
-            <li>
-              <a href="/">
-                <span class="icon"><i class="fa fa-qrcode"></i></span>
-                <span class="text">Dashboard</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="/buy">
-                <span class="icon"><i class="fa fa-link"></i></span>
-                <span class="text">Buy & Sell</span>
-              </a>
-            </li>
-            <li>
-              <a href="/lostfound">
-                <span class="icon"><i class="fa fa-eye"></i></span>
-                <span class="text">Lost & Found</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-book"></i></span>
-                <span class="text">Academic Calender</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-question-circle"></i></span>
-                <span class="text">Mess Menu</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-pen"></i></span>
-                <span class="text">Time Table</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span class="text">Cab Sharing</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span class="text">News & Updates</span>
-              </a>
-            </li>
-            <li>
-              <a href="/importantContacts">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span class="text">Important Contacts</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span class="text">Team</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {%block start%} {%endblock%}
     </div>
 
     {% else %}
-    <div class="container">
+    <div class="container3">
       <h1>Welcome to CampusConnect App</h1>
       <div class="all_buttons">
         <a class="button" href="{% provider_login_url 'google' %}"
