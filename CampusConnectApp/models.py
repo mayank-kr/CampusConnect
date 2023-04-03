@@ -30,3 +30,10 @@ class Sell(models.Model):
 class Buy(models.Model):
     id = models.OneToOneField(Sell, on_delete=models.CASCADE, primary_key=True)
     roll = models.ForeignKey(Users, on_delete=models.CASCADE)
+
+
+class Lost(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/lost')
+    description = models.TextField(max_length=500)
+    roll = models.ForeignKey(Users, on_delete=models.CASCADE)

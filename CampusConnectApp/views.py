@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Contact, Users, Sell
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from .forms import UserForm, SellForm
+from .forms import UserForm, SellForm, LostForm
 
 # from django.contrib.auth.views import LoginView
 
@@ -81,4 +81,17 @@ def sell(request):
             return redirect('/buy')
     else:
         form = SellForm(initial={'roll': current_user})
+    return render(request, 'sell.html', {'form': form})
+
+
+def lost(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
+    if request.method == 'POST':
+        form = LostForm(request.POST, initial={'roll': current_user})
+        if form.is_valid():
+            form.save()
+            return redirect('/buy')
+    else:
+        form = LostForm(initial={'roll': current_user})
     return render(request, 'sell.html', {'form': form})

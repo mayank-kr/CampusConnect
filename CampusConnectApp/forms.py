@@ -1,5 +1,5 @@
 from django import forms
-from .models import Users, Sell
+from .models import Users, Sell, Lost
 
 
 class UserForm(forms.ModelForm):
@@ -15,5 +15,16 @@ class SellForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(SellForm, self).__init__(*args, **kwargs)
+        self.fields['roll'].label_from_instance = lambda obj: "%s (%s)" % (
+            obj.name, obj.roll)
+
+
+class LostForm(forms.ModelForm):
+    class Meta:
+        model = Lost
+        fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        super(LostForm, self).__init__(*args, **kwargs)
         self.fields['roll'].label_from_instance = lambda obj: "%s (%s)" % (
             obj.name, obj.roll)
