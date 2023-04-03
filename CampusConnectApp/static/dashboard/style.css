@@ -7,7 +7,7 @@
     text-decoration: none;
    }
    
-   body{
+   /* body{
     background: #f5f5f5;
    }
 
@@ -63,9 +63,7 @@
 
    .top_navbar i{
     font-size: 2.5rem;
-    /* padding: 2rem; */
     margin: 1.3rem;
-    /* color: white; */
     vertical-align: middle;
    }
 
@@ -145,6 +143,76 @@
    .hover_collapse .sidebar ul li a .text{
     display: none;
    }
+ */
+
+ .container{
+  display: flex;
+  flex-direction: row;
+ }
+
+ .left{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* background-color: blueviolet; */
+ }
+
+ .left .logo{
+  display: flex;
+  flex-direction: row;
+ }
+
+ .left .logo img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 10rem;
+    margin: 1rem;
+ }
+
+ .left .logo p{
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 2rem 0rem;
+ }
+
+ .sidebar_content ul li a{
+  display: block;
+  padding: .55rem 25px;
+  /* border-bottom: 1px solid #03374e; */
+  color: #0e94d4;
+  padding: .5rem;
+  margin: 1rem;
+ }
+ 
+ .sidebar_content ul li a .icon{
+  font-size: 18px;
+  padding: .2rem;
+  margin: .1rem;
+  color: white;
+  vertical-align: middle;
+ }
+ 
+ .sidebar_content ul li a .text{
+  margin-left: auto;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+ }
+ 
+ .sidebar_content ul li a:hover{
+  background: #0e94d4;
+  color: #fff;
+ }
+
+
+
+
+ .right{
+  width: 70%;
+ }
 
 
 
@@ -155,7 +223,7 @@ body{
     background: linear-gradient(122deg, #111 50%,#111 0%,#444, #444 0);
 }
 
-.container{
+.container3{
     color: white;
     display: flex;
     flex-direction: column;
