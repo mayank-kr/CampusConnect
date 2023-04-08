@@ -28,4 +28,7 @@ urlpatterns = [
         template_name="importantContacts.html")),
     path('lostfound', TemplateView.as_view(
         template_name="lostfound.html")),
+    path('team', TemplateView.as_view(
+        template_name="teams.html")),
+    
 ]
