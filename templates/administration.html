@@ -2,21 +2,21 @@
 <link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 <div class="container2">
-  <h3>Administration Contacts</h3>
+  <h1 class="main_heading">Administration Contacts</h1>
   <br />
   <br />
   <br />
-  <table border="1">
+  <table class="table" border="1">
     <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Type</th>
+      <th class="table_heading">Name</th>
+      <th class="table_heading">Phone</th>
+      <th class="table_heading">Type</th>
     </tr>
     {% for x in contacts %}
     <tr>
-      <td>{{ x.name }}</td>
-      <td>{{ x.phone }}</td>
-      <td>{{ x.type }}</td>
+      <td class="table_data">{{ x.name }}</td>
+      <td class="table_data">{{ x.phone }}</td>
+      <td class="table_data">{{ x.type }}</td>
     </tr>
     {% endfor %}
   </table>

@@ -154,7 +154,11 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  /* background-color: blueviolet; */
+  background-color: #111;
+ }
+
+ .left .fixed{
+  position: fixed;
  }
 
  .left .logo{
@@ -182,8 +186,8 @@
   padding: .55rem 25px;
   /* border-bottom: 1px solid #03374e; */
   color: #0e94d4;
-  padding: .5rem;
-  margin: 1rem;
+  padding: .46rem;
+  margin: .8rem;
  }
  
  .sidebar_content ul li a .icon{
@@ -212,6 +216,7 @@
 
  .right{
   width: 70%;
+  background-color: #444;
  }
 
 
@@ -220,7 +225,7 @@
 
 body{
     height: 100vh;
-    background: linear-gradient(122deg, #111 50%,#111 0%,#444, #444 0);
+    /* background: linear-gradient(122deg, #111 50%,#111 0%,#444, #444 0); */
 }
 
 .container3{
@@ -254,16 +259,11 @@ body{
 
 /* utility classes */
 
-.container2{
-  margin-top: 6rem;
-  margin-left: 70px;
-  padding: 2rem;
-}
-
 .main_heading{
   padding: .5rem ;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 .paragraph{
   padding: 0 3rem;

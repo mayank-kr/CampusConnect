@@ -8,3 +8,50 @@ body{
     text-align: center;
     justify-content: center;
 }
+
+/* CSS for forms of profile and sell */
+
+.profile_form{
+    padding: 2rem;
+}
+
+.profile_form p{
+    font-size: 1.7rem;
+}
+
+.profile_form p label{
+    font-size: 1.4rem;
+    padding: 1.4rem;
+}
+
+.profile_form p input{
+    font-size: 1rem;
+}
+
+.profile_form button{
+    padding: .8rem;
+}
+
+
+/* css for sell button */
+
+.sell_button
+{
+    width: 23%;
+}
+
+/* css for table of emergency table */
+
+.table{
+    margin: 1.5rem;
+}
+
+.table .table_heading{
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+.table .table_data{
+    padding: .2rem;
+    font-size: 1.2rem;
+}

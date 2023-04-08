@@ -25,7 +25,9 @@
     {% if user.is_authenticated %}
     <div>
       <div class="container">
+        
         <div class="left">
+          <div class="fixed">
           <div class="logo">
             <img class="logo_img" src="{% static 'dashboard/logo.jpeg' %}" alt="photo not loading">
             <p>Campus Connect</p>
@@ -93,8 +95,15 @@
                   <span class="text">Team</span>
                 </a>
               </li>
+              <li>
+                <a href="/logout">
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">LogOut</span>
+                </a>
+              </li>
             </ul>
           </div>
+        </div>
         </div>
         <div class="right">
           {%block start%} {%endblock%}

@@ -3,9 +3,9 @@
 {% endblock %}
 <div class="container2">
   <h3>Sell your item</h3>
-  <form method="post">
+  <form class="profile_form" method="post">
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <button class="button" type="submit">Submit</button>
   </form>
 </div>
 {%endblock%}

@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 <div class="container2">
-  <h3>Profile Setup</h3>
-  <form method="post">
+  <h3 class="main_heading">Profile Setup</h3>
+  <form class="profile_form" method="post">
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button class="button" type="submit">Save</button>
   </form>
 </div>
 {%endblock%}
