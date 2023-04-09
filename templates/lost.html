@@ -2,10 +2,27 @@
 <link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 <div class="container2">
-  <h3>Report Lost Item</h3>
-  <form class="profile_form" method="post" enctype="multipart/form-data">
-    {% csrf_token %} {{ form.as_p }}
-    <button class="button" type="submit">Submit</button>
-  </form>
+  <h1 class="main_heading">Buy</h1>
+  <a class="button sell_button" href="/lostfound/lost/lostform"
+    >Report a lost item here!</a
+  >
+  <table class="table" border="1">
+    <tr>
+      <th class="table_heading">Name</th>
+      <th class="table_heading">Description</th>
+      <th class="table_heading">Image</th>
+      <th class="table_heading">Name (Roll No)</th>
+    </tr>
+    {% for x in data %} {% if not x.sold %}
+    <tr>
+      <td class="table_data">{{ x.name }}</td>
+      <td class="table_data">{{ x.description }}</td>
+      <td class="table_data">
+        <img src="/{{x.image}}" alt="Lost item image" width="100px" />
+      </td>
+      <td class="table_data">{{ x.roll.name }} ({{ x.roll.roll }})</td>
+    </tr>
+    {%endif%} {% endfor %}
+  </table>
 </div>
 {%endblock%}

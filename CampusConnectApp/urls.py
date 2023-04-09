@@ -3,13 +3,14 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('importantContacts/emergency', views.emergency, name='emergency'),
-    path('importantContacts/administration',
+    path('importantContacts/emergency/', views.emergency, name='emergency'),
+    path('importantContacts/administration/',
          views.administration, name='administration'),
-    path('importantContacts/faculty', views.faculty, name='faculty'),
+    path('importantContacts/faculty/', views.faculty, name='faculty'),
     path('profile', views.profile, name='profile'),
     path('buy', views.buy, name='buy'),
     path('sell', views.sell, name='sell'),
     path('lostfound/lost', views.lost, name='lost'),
+    path('lostfound/lost/lostform', views.lostform, name='lostform'),
     # path('accounts/google/login/', GoogleLoginView.as_view(), name='google_login'),
 ]

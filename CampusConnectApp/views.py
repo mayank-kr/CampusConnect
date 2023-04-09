@@ -1,6 +1,6 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell
+from .models import Contact, Users, Sell, Lost
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .forms import UserForm, SellForm, LostForm
@@ -85,6 +85,17 @@ def sell(request):
 
 
 def lost(request):
+    getdata = Lost.objects.all()
+    template = loader.get_template('lost.html')
+    context = {
+        'data': getdata
+    }
+    # for data in context['data']:
+    #     data.image = "{% static " + data.image.url[1:] + " %}"
+    return HttpResponse(template.render(context, request))
+
+
+def lostform(request):
     email = request.user.email
     current_user = Users.objects.get(email=email)
     if request.method == 'POST':
@@ -97,4 +108,4 @@ def lost(request):
             print("Error in lost form submission")
     else:
         form = LostForm(initial={'roll': current_user})
-    return render(request, 'lost.html', {'form': form})
+    return render(request, 'lostform.html', {'form': form})
