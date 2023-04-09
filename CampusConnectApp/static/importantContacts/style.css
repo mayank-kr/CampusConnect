@@ -1,8 +1,10 @@
 body{
-    color: white;
+    /* color: white; */
 }
 
 .container2{
+    color: black;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
