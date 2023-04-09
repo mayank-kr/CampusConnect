@@ -2,12 +2,6 @@ body{
     color: white;
 }
 
-.main_heading{
-    padding: .5rem ;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
 .paragraph{
     padding: 0 3rem;
     font-size: 1.1rem;

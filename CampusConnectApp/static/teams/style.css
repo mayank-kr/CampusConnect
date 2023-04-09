@@ -1,0 +1,123 @@
+/* css for teams page */
+
+.container4{
+    /* height: 100vh;
+    width: 100vw; */
+    /* max-height: 800px;
+    max-width: 1280px;
+    min-height: 600px;
+    min-width: 1000px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .border{
+    height: 369px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+    position: relative;
+  }
+  
+    .border:hover{
+      border: 1px solid white;
+    }
+  
+  .card{
+      margin: 10rem 1rem;
+    height: 379px;
+    width: 300px;
+    background: grey;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: black;
+    box-shadow: 0 70px 63px -60px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .card0{
+    background: url('https://wallpapercrafter.com/th800/345193-Anime-Naruto-Phone-Wallpaper.jpg') center center no-repeat;
+    background-size: 300px;
+  }
+  
+    .card0:hover{
+      background: url('https://wallpapercrafter.com/th800/345193-Anime-Naruto-Phone-Wallpaper.jpg') left center no-repeat;
+      background-size: 600px;
+    }
+  
+    .card0:hover h2{
+        opacity: 1;
+      }
+  
+      .card0:hover .fa{
+        opacity: 1;
+      }
+  
+  .card1{
+    background: url('https://w0.peakpx.com/wallpaper/182/441/HD-wallpaper-death-note-anime-random.jpg') center center no-repeat;
+    background-size: 300px;
+  }
+  
+  .card1:hover{
+      background: url('https://w0.peakpx.com/wallpaper/182/441/HD-wallpaper-death-note-anime-random.jpg') left center no-repeat;
+      background-size: 600px;
+  }
+  
+  .card1:hover h2{
+        opacity: 1;
+  }
+  
+        .card1:hover .fa{
+        opacity: 1;
+        }
+  
+  .card2{
+    background: url('https://fsb.zobj.net/crop.php?r=xPPzgk96b0SkyZHzTjxOEHf917O9fT_vgcTm2rKOgDssOWVOjJHt8k0gYqJrDo93l85r6DbCa5NAs5VRCgbRvtupBXZVfDSE4P_3c9ZgDha2PevMBVKZ5Zuwe6G3CC8iebdFfJdnV8f_qsdsMEOtz_d9SfGGK2ea0PfDm7FofYiCy-DY_QxFHQxwB6M3-a1stZ0HnyUIzlI0fDvL') center center no-repeat;
+    background-size: 300px;
+  }
+  
+  .card2:hover{
+      background: url('https://fsb.zobj.net/crop.php?r=xPPzgk96b0SkyZHzTjxOEHf917O9fT_vgcTm2rKOgDssOWVOjJHt8k0gYqJrDo93l85r6DbCa5NAs5VRCgbRvtupBXZVfDSE4P_3c9ZgDha2PevMBVKZ5Zuwe6G3CC8iebdFfJdnV8f_qsdsMEOtz_d9SfGGK2ea0PfDm7FofYiCy-DY_QxFHQxwB6M3-a1stZ0HnyUIzlI0fDvL') left center no-repeat;
+      background-size: 600px;
+  }
+  
+  .card2:hover h2{
+        opacity: 1;
+  }
+  
+  .card2:hover .fa{
+        opacity: 1;
+  }
+  
+  h2{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .card .fa{
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .card .icons{
+    position: absolute;
+    fill: #fff;
+    color: #fff;
+    height: 130px;
+    top: 226px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
