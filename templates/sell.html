@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 <div class="container2">
-  <h3>Sell your item</h3>
+  <h3 class="main_heading">Sell your item</h3>
   <form class="profile_form" method="post">
     {% csrf_token %} {{ form.as_p }}
     <button class="button" type="submit">Submit</button>
