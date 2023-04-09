@@ -16,4 +16,5 @@ urlpatterns = [
     path('cabsharing', views.cabsharing, name='cabsharing'),
     path('mess', views.mess, name='mess'),
     path('restaurants', views.restaurants, name='restaurants'),
+    path('timetable', views.timetable, name='timetable'),
 ]

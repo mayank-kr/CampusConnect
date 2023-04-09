@@ -30,6 +30,4 @@ urlpatterns = [
         template_name="lostfound.html")),
     path('team', TemplateView.as_view(
         template_name="teams.html")),
-    path('timetable', TemplateView.as_view(
-        template_name="timetable.html")),
 ]

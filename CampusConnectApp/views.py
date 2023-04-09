@@ -181,3 +181,12 @@ def restaurants(request):
         'data': getdata
     }
     return HttpResponse(template.render(context, request))
+
+
+def timetable(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
+    user_year = current_user.batch
+    print(user_year)
+    template = loader.get_template('timetable.html')
+    return HttpResponse(template.render({'year': user_year}, request))
