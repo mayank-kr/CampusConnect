@@ -44,3 +44,11 @@ class Found(models.Model):
     image = models.ImageField(upload_to='images/found')
     description = models.TextField(max_length=500)
     roll = models.ForeignKey(Users, on_delete=models.CASCADE)
+
+
+class CabSharing(models.Model):
+    id = models.AutoField(primary_key=True)
+    to_address = models.CharField(max_length=500)
+    from_address = models.CharField(max_length=500)
+    roll = models.ForeignKey(Users, on_delete=models.CASCADE)
+    time = models.DateTimeField()
