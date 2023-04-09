@@ -1,6 +1,6 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell, Lost, Found, CabSharing, Mess
+from .models import Contact, Users, Sell, Lost, Found, CabSharing, Mess, Restaurants
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import UserForm, SellForm, LostForm, FoundForm, CabSharingForm
@@ -169,6 +169,15 @@ def mess(request):
     template = loader.get_template('mess.html')
     context = {
         'day': now.strftime("%A"),
+        'data': getdata
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def restaurants(request):
+    getdata = Restaurants.objects.all().order_by('distance')
+    template = loader.get_template('restaurants.html')
+    context = {
         'data': getdata
     }
     return HttpResponse(template.render(context, request))
