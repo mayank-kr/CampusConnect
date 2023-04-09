@@ -12,5 +12,7 @@ urlpatterns = [
     path('sell', views.sell, name='sell'),
     path('lostfound/lost', views.lost, name='lost'),
     path('lostfound/lost/lostform', views.lostform, name='lostform'),
+    path('lostfound/found', views.found, name='found'),
+    path('lostfound/found/foundform', views.foundform, name='foundform'),
     # path('accounts/google/login/', GoogleLoginView.as_view(), name='google_login'),
 ]

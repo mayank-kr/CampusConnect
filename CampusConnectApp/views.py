@@ -1,9 +1,9 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell, Lost
+from .models import Contact, Users, Sell, Lost, Found
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from .forms import UserForm, SellForm, LostForm
+from .forms import UserForm, SellForm, LostForm, FoundForm
 
 # from django.contrib.auth.views import LoginView
 
@@ -90,8 +90,15 @@ def lost(request):
     context = {
         'data': getdata
     }
-    # for data in context['data']:
-    #     data.image = "{% static " + data.image.url[1:] + " %}"
+    return HttpResponse(template.render(context, request))
+
+
+def found(request):
+    getdata = Found.objects.all()
+    template = loader.get_template('found.html')
+    context = {
+        'data': getdata
+    }
     return HttpResponse(template.render(context, request))
 
 
@@ -109,3 +116,19 @@ def lostform(request):
     else:
         form = LostForm(initial={'roll': current_user})
     return render(request, 'lostform.html', {'form': form})
+
+
+def foundform(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
+    if request.method == 'POST':
+        form = FoundForm(request.POST, request.FILES,
+                         initial={'roll': current_user})
+        if form.is_valid():
+            form.save()
+            return redirect('/lostfound/found')
+        else:
+            print("Error in lost form submission")
+    else:
+        form = LostForm(initial={'roll': current_user})
+    return render(request, 'foundform.html', {'form': form})
