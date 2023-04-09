@@ -186,7 +186,8 @@
  .left .logo p{
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-weight: 900;
+  font-weight: 600;
+  letter-spacing: .15rem;
   margin: 2rem 0rem;
  }
 
@@ -267,7 +268,7 @@ body{
     box-sizing: border-box;
     padding: 1.5rem;
     margin: 2rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     text-transform: uppercase;
     color: black;
@@ -289,11 +290,13 @@ body{
 
 .main_heading{
   padding: .5rem ;
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-align: center;
   margin: 1rem;
   /* color: white; */
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 .paragraph{
   padding: 0 3rem;
@@ -303,6 +306,11 @@ body{
 
 .sub_heading{
   font-weight: 500;
+  padding: .5rem;
+  margin: .5rem 2.5rem;
+}
+
+.sub_heading{
   padding: .5rem;
   margin: .5rem 2.5rem;
 }
