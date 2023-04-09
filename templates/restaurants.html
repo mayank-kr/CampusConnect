@@ -1,0 +1,23 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+<div class="container2">
+  <h1 class="main_heading">Explore restaurants near you!</h1>
+  <table class="table" border="1">
+    <tr>
+      <th class="table_heading">Name</th>
+      <th class="table_heading">Cuisine</th>
+      <th class="table_heading">Distance</th>
+      <th class="table_heading">Price Range</th>
+    </tr>
+    {% for x in data %}
+    <tr>
+      <td class="table_data">{{ x.name }}</td>
+      <td class="table_data">{{ x.cuisine }}</td>
+      <td class="table_data">{{ x.distance }}</td>
+      <td class="table_data">{{ x.price }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{%endblock%}

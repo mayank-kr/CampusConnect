@@ -1,11 +1,11 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell, Lost, Found, CabSharing
-from django.shortcuts import render, redirect, get_object_or_404
+from .models import Contact, Users, Sell, Lost, Found, CabSharing, Mess, Restaurants
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import UserForm, SellForm, LostForm, FoundForm, CabSharingForm
 from django.utils import timezone
-from django.contrib import messages
+import datetime
 
 # from django.contrib.auth.views import LoginView
 
@@ -161,3 +161,23 @@ def cabsharingform(request):
     else:
         form = CabSharingForm(initial={'roll': current_user})
     return render(request, 'cabsharingform.html', {'form': form, 'error': error_msg})
+
+
+def mess(request):
+    now = datetime.datetime.now()
+    getdata = Mess.objects.all().filter(day=(now.strftime("%A")))
+    template = loader.get_template('mess.html')
+    context = {
+        'day': now.strftime("%A"),
+        'data': getdata
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def restaurants(request):
+    getdata = Restaurants.objects.all().order_by('distance')
+    template = loader.get_template('restaurants.html')
+    context = {
+        'data': getdata
+    }
+    return HttpResponse(template.render(context, request))
