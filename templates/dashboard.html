@@ -37,15 +37,15 @@
         <div class="left">
           <div class="fixed">
             <a class="logo" href="/">
-            <div class="logo">
-              <img
-                class="logo_img"
-                src="{% static 'dashboard/logo.jpeg' %}"
-                alt="photo not loading"
-              />
-              <p>Campus Connect</p>
-            </div>
-          </a>
+              <div class="logo">
+                <img
+                  class="logo_img"
+                  src="{% static 'dashboard/logo.jpeg' %}"
+                  alt="photo not loading"
+                />
+                <p>Campus Connect</p>
+              </div>
+            </a>
             <div class="sidebar_content">
               <ul>
                 <li>
@@ -86,7 +86,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/cabsharing">
                     <span class="icon"><i class="fa fa-taxi"></i></span>
                     <span class="text">Cab Sharing</span>
                   </a>
@@ -132,10 +132,12 @@
     <div class="container3">
       <h1 class="main_heading">Welcome to CampusConnect App</h1>
       <div class="all_buttons">
-        <a class="custom-btn button" href="{% provider_login_url 'google' %}"
-          > <span> Login using Institute ID!</span></a
+        <a class="custom-btn button" href="{% provider_login_url 'google' %}">
+          <span> Login using Institute ID!</span></a
         >
-        <a class="custom-btn button" href="/admin"> <span> Login as Admin!</span></a>
+        <a class="custom-btn button" href="/admin">
+          <span> Login as Admin!</span></a
+        >
       </div>
     </div>
     {% endif %}
