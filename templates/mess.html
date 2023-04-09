@@ -1,0 +1,22 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+<div class="container2">
+  <h1 class="main_heading">Today's Mess Menu</h1>
+  <h1 class="main_heading">Day: {{day}}</h1>
+  <table class="table" border="1">
+    <tr>
+      <th class="table_heading">Meal</th>
+      <th class="table_heading">Items</th>
+    </tr>
+    {% for x in data %}
+    <tr>
+      <td class="table_data">{{ x.meal }}</td>
+      <td class="table_data">{{ x.items }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div>Not happy with the Menu?</div>
+  <a href="nearbyrestaurants">Click here to explore nearby restaurants!</a>
+</div>
+{%endblock%}

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Contact, Users, Sell, Buy, Lost, Found, CabSharing
+from .models import Contact, Users, Sell, Buy, Lost, Found, CabSharing, Mess
 
 admin.site.register(Contact)
 admin.site.register(Users)
@@ -10,3 +10,4 @@ admin.site.register(Buy)
 admin.site.register(Lost)
 admin.site.register(Found)
 admin.site.register(CabSharing)
+admin.site.register(Mess)
