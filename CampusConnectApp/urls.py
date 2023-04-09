@@ -6,7 +6,7 @@ urlpatterns = [
     path('importantContacts/administration/',
          views.administration, name='administration'),
     path('importantContacts/faculty/', views.faculty, name='faculty'),
-    path('profile', views.profile, name='profile'),
+    path('profile/', views.profile, name='profile'),
     path('buy', views.buy, name='buy'),
     path('sell', views.sell, name='sell'),
     path('lostfound/lost', views.lost, name='lost'),
