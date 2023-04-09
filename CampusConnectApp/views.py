@@ -88,10 +88,13 @@ def lost(request):
     email = request.user.email
     current_user = Users.objects.get(email=email)
     if request.method == 'POST':
-        form = LostForm(request.POST, initial={'roll': current_user})
+        form = LostForm(request.POST, request.FILES,
+                        initial={'roll': current_user})
         if form.is_valid():
             form.save()
-            return redirect('/buy')
+            return redirect('/lostfound/lost')
+        else:
+            print("Error in lost form submission")
     else:
         form = LostForm(initial={'roll': current_user})
-    return render(request, 'sell.html', {'form': form})
+    return render(request, 'lost.html', {'form': form})

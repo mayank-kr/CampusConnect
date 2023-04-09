@@ -25,89 +25,92 @@
     {% if user.is_authenticated %}
     <div>
       <div class="container">
-        
         <div class="left">
           <div class="fixed">
-          <div class="logo">
-            <img class="logo_img" src="{% static 'dashboard/logo.jpeg' %}" alt="photo not loading">
-            <p>Campus Connect</p>
+            <div class="logo">
+              <img
+                class="logo_img"
+                src="{% static 'dashboard/logo.jpeg' %}"
+                alt="photo not loading"
+              />
+              <p>Campus Connect</p>
+            </div>
+            <div class="sidebar_content">
+              <ul>
+                <li>
+                  <a href="/">
+                    <span class="icon"><i class="fa fa-qrcode"></i></span>
+                    <span class="text">Dashboard</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/buy">
+                    <span class="icon"><i class="fa fa-link"></i></span>
+                    <span class="text">Buy & Sell</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/lostfound">
+                    <span class="icon"><i class="fa fa-eye"></i></span>
+                    <span class="text">Lost & Found</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.iiitg.ac.in/calendar_continuing.php">
+                    <span class="icon"><i class="fa fa-book"></i></span>
+                    <span class="text">Academic Calender</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"
+                      ><i class="fa fa-question-circle"></i
+                    ></span>
+                    <span class="text">Mess Menu</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fa fa-pen"></i></span>
+                    <span class="text">Time Table</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                    <span class="text">Cab Sharing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://iiitg.ac.in">
+                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                    <span class="text">News & Updates</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/importantContacts">
+                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                    <span class="text">Important Contacts</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/team">
+                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                    <span class="text">Team</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/logout">
+                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                    <span class="text">LogOut</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sidebar_content">
-            <ul>
-              <li>
-                <a href="/">
-                  <span class="icon"><i class="fa fa-qrcode"></i></span>
-                  <span class="text">Dashboard</span>
-                </a>
-              </li>
-      
-              <li>
-                <a href="/buy">
-                  <span class="icon"><i class="fa fa-link"></i></span>
-                  <span class="text">Buy & Sell</span>
-                </a>
-              </li>
-              <li>
-                <a href="/lostfound">
-                  <span class="icon"><i class="fa fa-eye"></i></span>
-                  <span class="text">Lost & Found</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="icon"><i class="fa fa-book"></i></span>
-                  <span class="text">Academic Calender</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="icon"><i class="fa fa-question-circle"></i></span>
-                  <span class="text">Mess Menu</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="icon"><i class="fa fa-pen"></i></span>
-                  <span class="text">Time Table</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Cab Sharing</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">News & Updates</span>
-                </a>
-              </li>
-              <li>
-                <a href="/importantContacts">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Important Contacts</span>
-                </a>
-              </li>
-              <li>
-                <a href="/team">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Team</span>
-                </a>
-              </li>
-              <li>
-                <a href="/logout">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">LogOut</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
-        </div>
-        <div class="right">
-          {%block start%} {%endblock%}
-        </div>
+        <div class="right">{%block start%} {%endblock%}</div>
       </div>
     </div>
 
