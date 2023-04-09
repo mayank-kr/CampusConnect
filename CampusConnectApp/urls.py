@@ -15,6 +15,7 @@ urlpatterns = [
     path('lostfound/found/foundform', views.foundform, name='foundform'),
     path('cabsharing', views.cabsharing, name='cabsharing'),
     path('cabsharing/cabsharingform', views.cabsharingform, name='cabsharingform'),
+    # path('timetable', views.timetable, name='timetable'),
     path('mess', views.mess, name='mess'),
     path('restaurants', views.restaurants, name='restaurants'),
 ]
