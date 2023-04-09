@@ -23,12 +23,11 @@ urlpatterns = [
     path('', include('CampusConnectApp.urls')),
     path('', TemplateView.as_view(template_name="home.html")),
     path('accounts/', include('allauth.urls')),
-    path('logout', LogoutView.as_view()),
+    path('logout/', LogoutView.as_view()),
     path('importantContacts', TemplateView.as_view(
         template_name="importantContacts.html")),
     path('lostfound', TemplateView.as_view(
         template_name="lostfound.html")),
     path('team', TemplateView.as_view(
         template_name="teams.html")),
-
 ]

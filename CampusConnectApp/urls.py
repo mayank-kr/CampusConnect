@@ -1,5 +1,4 @@
 from django.urls import path
-# from .views import GoogleLoginView
 from . import views
 
 urlpatterns = [
@@ -14,5 +13,6 @@ urlpatterns = [
     path('lostfound/lost/lostform', views.lostform, name='lostform'),
     path('lostfound/found', views.found, name='found'),
     path('lostfound/found/foundform', views.foundform, name='foundform'),
-    # path('accounts/google/login/', GoogleLoginView.as_view(), name='google_login'),
+    path('cabsharing', views.cabsharing, name='cabsharing'),
+    path('cabsharing/cabsharingform', views.cabsharingform, name='cabsharingform'),
 ]

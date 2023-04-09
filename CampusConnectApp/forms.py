@@ -1,5 +1,6 @@
 from django import forms
-from .models import Users, Sell, Lost, Found
+from .models import Users, Sell, Lost, Found, CabSharing
+from django.utils import timezone
 
 
 class UserForm(forms.ModelForm):
@@ -79,3 +80,23 @@ class FoundForm(forms.ModelForm):
         super(FoundForm, self).__init__(*args, **kwargs)
         self.fields['roll'].label_from_instance = lambda obj: "%s (%s)" % (
             obj.name, obj.roll)
+
+
+class CabSharingForm(forms.ModelForm):
+    class Meta:
+        model = CabSharing
+        exclude = ['id']
+        widgets = {
+            'time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(CabSharingForm, self).__init__(*args, **kwargs)
+        self.fields['roll'].label_from_instance = lambda obj: "%s (%s)" % (
+            obj.name, obj.roll)
+
+    def clean_start_time(self):
+        start_time = self.cleaned_data.get('time')
+        if start_time < timezone.now():
+            raise forms.ValidationError("Time must be in the future.")
+        return start_time

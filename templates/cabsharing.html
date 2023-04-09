@@ -1,0 +1,26 @@
+{%extends "dashboard.html" %} {% load static %} {%block start%} {% block css %}
+<link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
+{% endblock %}
+<div class="container2">
+  <h1 class="main_heading">Cab Sharing Portal</h1>
+  <a class="button sell_button" href="cabsharing/cabsharingform"
+    >Post a cab sharing request!</a
+  >
+  <table class="table" border="1">
+    <tr>
+      <th class="table_heading">From</th>
+      <th class="table_heading">To</th>
+      <th class="table_heading">Time</th>
+      <th class="table_heading">Name (Roll No)</th>
+    </tr>
+    {% for x in data %}
+    <tr>
+      <td class="table_data">{{ x.from_address }}</td>
+      <td class="table_data">{{ x.to_address }}</td>
+      <td class="table_data">{{ x.time }}</td>
+      <td class="table_data">{{ x.roll.name }} ({{ x.roll.roll }})</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{%endblock%}

@@ -1,9 +1,11 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell, Lost, Found
+from .models import Contact, Users, Sell, Lost, Found, CabSharing
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from .forms import UserForm, SellForm, LostForm, FoundForm
+from .forms import UserForm, SellForm, LostForm, FoundForm, CabSharingForm
+from django.utils import timezone
+from django.contrib import messages
 
 # from django.contrib.auth.views import LoginView
 
@@ -132,3 +134,30 @@ def foundform(request):
     else:
         form = LostForm(initial={'roll': current_user})
     return render(request, 'foundform.html', {'form': form})
+
+
+def cabsharing(request):
+    getdata = CabSharing.objects.all()
+    template = loader.get_template('cabsharing.html')
+    context = {
+        'data': getdata
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def cabsharingform(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
+    error_msg = ""
+    if request.method == 'POST':
+        form = CabSharingForm(request.POST, initial={'roll': current_user})
+        if form.is_valid():
+            form_time = form.cleaned_data['time']
+            if form_time > timezone.now():
+                form.save()
+                return redirect('/cabsharing')
+            else:
+                error_msg = 'Invalid time, time must be in future'
+    else:
+        form = CabSharingForm(initial={'roll': current_user})
+    return render(request, 'cabsharingform.html', {'form': form, 'error': error_msg})
