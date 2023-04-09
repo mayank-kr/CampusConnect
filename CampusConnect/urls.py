@@ -23,7 +23,11 @@ urlpatterns = [
     path('', include('CampusConnectApp.urls')),
     path('', TemplateView.as_view(template_name="home.html")),
     path('accounts/', include('allauth.urls')),
+<<<<<<< HEAD
     path('logout/', LogoutView.as_view()),
+=======
+    path('logout', LogoutView.as_view()),
+>>>>>>> 6c2bda2e5c6cc4b1778351a161498c437c8a661b
     path('importantContacts', TemplateView.as_view(
         template_name="importantContacts.html")),
     path('lostfound', TemplateView.as_view(
