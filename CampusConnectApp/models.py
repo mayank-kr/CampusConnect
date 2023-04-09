@@ -72,3 +72,10 @@ class Restaurants(models.Model):
     cuisine = models.CharField(max_length=100)
     distance = models.FloatField()
     price = models.CharField(max_length=100)
+
+
+class Todo(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    roll = models.ForeignKey(Users, on_delete=models.CASCADE)
+    time = models.DateTimeField()

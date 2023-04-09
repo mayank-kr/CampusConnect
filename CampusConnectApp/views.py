@@ -1,9 +1,9 @@
 from django.template import loader
 from django.http import HttpResponse
-from .models import Contact, Users, Sell, Lost, Found, CabSharing, Mess, Restaurants
+from .models import Contact, Users, Sell, Lost, Found, CabSharing, Mess, Restaurants, Todo
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .forms import UserForm, SellForm, LostForm, FoundForm, CabSharingForm
+from .forms import UserForm, SellForm, LostForm, FoundForm, CabSharingForm, TodoForm
 from django.utils import timezone
 import datetime
 
@@ -186,7 +186,27 @@ def restaurants(request):
 def timetable(request):
     email = request.user.email
     current_user = Users.objects.get(email=email)
+    current_todos = Todo.objects.filter(
+        roll=current_user.roll).order_by('time')
     user_year = current_user.batch
-    print(user_year)
+    print(current_user)
     template = loader.get_template('timetable.html')
-    return HttpResponse(template.render({'year': user_year}, request))
+    return HttpResponse(template.render({'year': user_year, 'todos': current_todos}, request))
+
+
+def todoform(request):
+    email = request.user.email
+    current_user = Users.objects.get(email=email)
+    error_msg = ""
+    if request.method == 'POST':
+        form = TodoForm(request.POST, initial={'roll': current_user})
+        if form.is_valid():
+            form_time = form.cleaned_data['time']
+            if form_time > timezone.now():
+                form.save()
+                return redirect('/timetable')
+            else:
+                error_msg = 'Invalid time, time must be in future'
+    else:
+        form = TodoForm(initial={'roll': current_user})
+    return render(request, 'todoform.html', {'form': form, 'error': error_msg})

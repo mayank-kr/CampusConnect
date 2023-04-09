@@ -17,4 +17,5 @@ urlpatterns = [
     path('mess', views.mess, name='mess'),
     path('restaurants', views.restaurants, name='restaurants'),
     path('timetable', views.timetable, name='timetable'),
+    path('todoform', views.todoform, name='todoform'),
 ]

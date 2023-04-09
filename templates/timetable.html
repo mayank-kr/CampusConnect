@@ -29,5 +29,20 @@
   {%endif%}
   <br />
   <h1 class="main_heading">ToDos</h1>
+  <table class="table" border="1">
+    <tr>
+      <th class="table_heading">Name</th>
+      <th class="table_heading">Description</th>
+      <th class="table_heading">Time</th>
+    </tr>
+    {% for x in todos %}
+    <tr>
+      <td class="table_data">{{ x.name }}</td>
+      <td class="table_data">{{ x.description }}</td>
+      <td class="table_data">{{ x.time }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/todoform" class="button">Click here to add task</a>
 </div>
 {%endblock%}
