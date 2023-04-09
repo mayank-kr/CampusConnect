@@ -2,9 +2,11 @@ from django.db import models
 
 
 class Contact(models.Model):
+    type_choices = [('Emergency', 'Emergency'), ('Administration',
+                                                 'Administration'), ('Faculty', 'Faculty')]
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    type = models.CharField(max_length=50)
+    type = models.CharField(max_length=50, choices=type_choices)
 
 
 class Users(models.Model):
