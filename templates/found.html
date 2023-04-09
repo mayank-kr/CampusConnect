@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="{% static 'importantContacts/style.css' %}" />
 {% endblock %}
 <div class="container2">
-  <h1 class="main_heading">Lost Portal</h1>
-  <a class="button sell_button" href="/lostfound/lost/lostform"
-    >Report a lost item here!</a
+  <h1 class="main_heading">Found Portal</h1>
+  <a class="button sell_button" href="/lostfound/found/foundform"
+    >Report a found item here!</a
   >
   <table class="table" border="1">
     <tr>
@@ -13,7 +13,7 @@
       <th class="table_heading">Image</th>
       <th class="table_heading">Name (Roll No)</th>
     </tr>
-    {% for x in data %} {% if not x.sold %}
+    {% for x in data %}
     <tr>
       <td class="table_data">{{ x.name }}</td>
       <td class="table_data">{{ x.description }}</td>
@@ -22,7 +22,7 @@
       </td>
       <td class="table_data">{{ x.roll.name }} ({{ x.roll.roll }})</td>
     </tr>
-    {%endif%} {% endfor %}
+    {% endfor %}
   </table>
 </div>
 {%endblock%}
